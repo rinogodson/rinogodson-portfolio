@@ -12,6 +12,15 @@
   --font-family-mono: var(--font-sfmono), monospace;
 }
 
+.font-space-grotesk {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-sfmono {
+  font-family:
+    var(--font-sfmono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
 body {
   font-family: var(--font-family-mono);
 }
