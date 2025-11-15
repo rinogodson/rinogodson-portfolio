@@ -10,6 +10,7 @@ export default function Home() {
           <h1 className="text-2xl max-[600px]:text-xl max-[1200px]:text-[1em] font-bold text-[#7F91AF]">
             turning coffee into code &amp; bugs into features
           </h1>
+
           <p className="text-xl max-[600px]:text-sm w-150 max-[600px]:w-full max-[1200px]:text-[1em]">
             i&apos;m hands-off with docs. i learn by building - sometimes small,
             sometimes wild. i like turning ideas into real, working stuff. even
