@@ -9,9 +9,9 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
   return (
     <motion.div
       initial={{
-        translateX: "190%",
+        translateX: "150%",
         rotate: "90deg",
-        opacity: 0.5,
+        opacity: 0,
         translateY: "-50%",
         scale: 2,
       }}
@@ -25,7 +25,7 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
       transition={{
         type: "tween",
         ease: [0.0, 0.0, 0.2, 1],
-        delay: 0.2,
+        delay: 0.5,
         duration: 0.5,
       }}
       style={{

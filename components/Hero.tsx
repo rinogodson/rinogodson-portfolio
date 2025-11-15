@@ -6,10 +6,10 @@ function Hero() {
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, translateY: 100 }}
+        initial={{ opacity: 0, translateY: 5 }}
         animate={{ opacity: 1, translateY: 0 }}
-        exit={{ opacity: 0, translateY: 100 }}
-        className="font-space-grotesk flex flex-col p-10 items-center w-screen absolute  bottom-0 font-bold uppercase"
+        transition={{ duration: 1 }}
+        className="font-space-grotesk flex flex-col p-10 items-center w-screen h-fit absolute  bottom-0 font-bold uppercase"
       >
         <p className="font-space-grotesk text-3xl sm:text-5xl mb-4 max-[1200px]:mb-2 self-start text-[#757980]">
           HELLO, I&apos;M
