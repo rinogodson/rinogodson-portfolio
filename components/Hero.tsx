@@ -15,23 +15,21 @@ function Hero() {
           HELLO, I&apos;M
         </p>
 
-        <div className="flex max-[1200px]:flex-col max-[1200px]:gap-1.5 w-full justify-center aspect-1161/135 max-[1200px]:aspect-auto">
+        <div className="flex w-full">
           <Image
-            src="/title/RINO.svg"
-            alt="RINO"
+            src="/title/RINO-inline.svg"
+            alt="RINO-i"
             width={1000}
             height={500}
-            className="w-auto h-full max-[1200px]:w-fit max-[600px]:h-20 max-[600px]:w-fit"
+            className="w-full h-full max-[800px]:hidden"
           />
 
-          <div className="w-[60px] max-[1200px]:hidden" />
-
           <Image
-            src="/title/GODSON.svg"
-            alt="GODSON"
+            src="/title/RINO-block.svg"
+            alt="RINO-b"
             width={1000}
             height={500}
-            className="w-auto h-full max-[1200px]:w-fit"
+            className="w-full h-full max-[800px]:block hidden"
           />
         </div>
       </motion.div>

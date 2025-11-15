@@ -32,7 +32,7 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
         transition: "all " + spring(0.1, 0.3),
         mixBlendMode: preview ? "initial" : "exclusion",
       }}
-      className="active:scale-99 border-b-20 backdrop-blur-3xl border-8 sm:border-13 sm:border-b-40 border-[#BEB4A8] w-fit h-fit absolute max-[600px]:-right-8 right-20 max-[1200px]:-right-8 bottom-[60%] max-[600px]:bottom-[50%] "
+      className="active:scale-99 border-b-20 backdrop-blur-3xl border-8 sm:border-13 sm:border-b-40 border-[#BEB4A8] w-fit h-fit absolute max-[600px]:-right-8 right-20 bottom-[60%] max-[600px]:bottom-[50%] "
       onClick={() => setPreview(!preview)}
       onMouseLeave={() => setPreview(false)}
     >
