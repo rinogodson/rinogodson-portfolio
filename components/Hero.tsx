@@ -21,7 +21,7 @@ function Hero() {
             alt="RINO"
             width={1000}
             height={500}
-            className="w-auto h-full max-[1200px]:w-fit max-[600px]:h-20 max-[600px]:w-fit"
+            className="w-auto h-full max-[1200px]:w-fit max-[600px]:h-20"
           />
 
           <div className="w-[60px] max-[1200px]:hidden" />
