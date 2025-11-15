@@ -17,7 +17,7 @@ function Hero() {
 
         <div className="flex w-full">
           <Image
-            src="/title/RINO-inline.svg"
+            src="/title/RINO-Inline.svg"
             alt="RINO-i"
             width={1000}
             height={500}
