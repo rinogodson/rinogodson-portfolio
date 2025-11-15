@@ -11,13 +11,13 @@ function Hero() {
         exit={{ opacity: 0, translateY: 100 }}
         className="font-space-grotesk flex flex-col p-10 items-center w-screen absolute  bottom-0 font-bold uppercase"
       >
-        <p className="font-space-grotesk text-2xl sm:text-5xl mb-4 self-start text-[#757980]">
+        <p className="font-space-grotesk text-2xl sm:text-5xl mb-4 max-[1200px]:mb-2 self-start text-[#757980]">
           HELLO, I&apos;M
         </p>
 
         <div
           style={{ aspectRatio: "1161 / 135" }}
-          className="flex max-[1200px]:flex-col max-[1200px]:gap-3 w-full justify-center "
+          className="flex max-[1200px]:flex-col max-[1200px]:gap-1.5 w-full justify-center "
         >
           <Image
             src="/title/RINO.svg"

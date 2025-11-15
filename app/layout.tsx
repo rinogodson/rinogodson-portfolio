@@ -88,7 +88,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${sfMono.variable}`}>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${sfMono.variable} scroll-smooth overflow-x-hidden`}
+    >
       <body className={`${sfMono.className} antialiased`}>{children}</body>
     </html>
   );

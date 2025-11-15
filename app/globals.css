@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sfmono: var(--font-sfmono);
   --font-family-mono: var(--font-sfmono), monospace;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
 }
 
 .font-space-grotesk {
@@ -30,6 +31,11 @@ body {
     --background: #090e13;
     --foreground: #f0f0f0;
   }
+}
+
+* {
+  user-select: none;
+  outline: none;
 }
 
 body {
