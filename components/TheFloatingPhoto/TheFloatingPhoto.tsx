@@ -9,7 +9,7 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
   return (
     <motion.div
       initial={{
-        translateX: "100%",
+        translateX: "190%",
         rotate: "90deg",
         opacity: 0.5,
         translateY: "-50%",
