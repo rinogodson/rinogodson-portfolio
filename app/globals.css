@@ -13,6 +13,12 @@
   --font-space-grotesk: "Space Grotesk", sans-serif;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .safari\:h-auto {
+    @apply h-auto;
+  }
+}
+
 .font-space-grotesk {
   font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 }
