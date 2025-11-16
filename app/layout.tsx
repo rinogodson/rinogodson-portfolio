@@ -89,6 +89,9 @@ const sfMono = localFont({
 export const metadata: Metadata = {
   title: "Rino Godson | Portfolio",
   description: "This is the portfolio of Rino Godson, who is a Developer.",
+  icons: {
+    icon: "/fav.webp",
+  },
 };
 
 export default function RootLayout({
