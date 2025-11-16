@@ -111,10 +111,11 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 1, type: "spring", damping: 8 }}
           onClick={(e) => {
             e.stopPropagation();
           }}
+          style={{ transition: "all " + spring(0.2, 0.5) }}
           className="absolute -top-4 -left-4 border-2 border-black active:scale-130 active:text-red-500 transition-all duration-100 p-2 bg-[#BCB0A4] text-black rounded-full text-2xl"
         >
           <PiHeartFill />
