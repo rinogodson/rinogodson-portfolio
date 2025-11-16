@@ -62,7 +62,7 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
         transition: "all " + spring(0.1, 0.3),
         mixBlendMode: preview ? "initial" : "exclusion",
       }}
-      className="backdrop-blur-3xl border-8 sm:border-13 border-[#BEB4A8] border-b-0 sm:border-b-0 w-fit h-fit absolute max-[640px]:-right-8 right-20 bottom-[60%] max-[600px]:bottom-[50%] "
+      className="backdrop-blur-3xl border-8 sm:border-13 border-[#BEB4A8] border-b-0 sm:border-b-0 w-fit h-fit absolute max-[640px]:-right-8 right-20 bottom-[60%] max-[600px]:bottom-[50%] shadow-[0_0_0_2px_black]"
       onClick={() => {
         if (isMobile) setPreview(!preview);
       }}
@@ -108,14 +108,20 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
         <a
           onClick={(e) => {
             e.stopPropagation();
-            handleClick();
+            if (!isMobile) handleClick();
           }}
           className="h-full w-fit flex px-2 sm:hover:scale-120 active:scale-95 sm:active:scale-100 active:text-red-950 hover:text-red-900 justify-center items-center"
         >
           <PiHeartFill />
         </a>
-        {count}
+        {count ? count : "loading..."}
       </p>
+      {!isMobile && (
+        <div className="absolute text-right translate-y-4 text-white/40 text-sm right-0">
+          Click the
+          <br /> heart icon
+        </div>
+      )}
       {isMobile && (
         <motion.div
           initial={{ scale: 0 }}
