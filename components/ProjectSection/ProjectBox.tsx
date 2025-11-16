@@ -7,7 +7,6 @@ function ProjectBox({
   desc,
   demo,
   repo,
-  i,
 }: {
   title: string;
   stack: string;
@@ -17,7 +16,7 @@ function ProjectBox({
   i: number;
 }) {
   return (
-    <div className="p-5 w-full justify-between max-[640px]:border-x-0 font-bold h-full border-x-2 border-y-2 border-white/10 flex flex-col gap-5">
+    <div className="p-5 bg-[rgba(9,14,19,0.5)] w-full justify-between max-[640px]:border-x-0 font-bold h-full border-x-2 border-y-2 border-white/10 flex flex-col gap-5">
       <div className="flex flex-col gap-2">
         <div className="text-3xl text-[#7E9F6E]">{title}</div>
         <div className="text-[1.1rem] text-[#75797F]">{stack}</div>

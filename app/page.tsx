@@ -2,6 +2,7 @@ import AnimationWrapper from "@/components/Button/AnimationWrapper/AnimationWrap
 import Button from "@/components/Button/Button";
 import Social from "@/components/Button/Socials/Social";
 import Hero from "@/components/Hero";
+import LanguageSet from "@/components/Languages/LangaugeSet";
 import projectData from "@/components/ProjectSection/data";
 import ProjectBox from "@/components/ProjectSection/ProjectBox";
 import ProjectClientWrapper from "@/components/ProjectSection/ProjectClientWrapper";
@@ -62,6 +63,68 @@ export default function Home() {
           })}
         </div>
         <ProjectClientWrapper />
+        <div className="flex sm:flex-row flex-col justify-between sm:px-10 items-center gap-20">
+          <div>
+            <div
+              id="skills"
+              className="mb-4 mt-20 sm:text-5xl max-[800px]:px-10 text-3xl font-bold text-[#7EAABA]"
+            >
+              # Skills
+            </div>
+            <div
+              id="skills"
+              className="sm:text-3xl max-[800px]:px-10 text-2xl font-bold text-[#7F91AF]"
+            >
+              ## Languages
+            </div>
+            <LanguageSet />
+
+            <div
+              id="skills"
+              className="mt-10 sm:text-3xl max-[800px]:px-10 text-2xl font-bold text-[#7F91AF]"
+            >
+              ## Tools
+            </div>
+            <div className="flex flex-wrap max-[800px]:px-10 mt-3 gap-2">
+              <a
+                className={
+                  "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
+                }
+              >
+                NEOVIM
+              </a>
+              <a
+                className={
+                  "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
+                }
+              >
+                GIT
+              </a>
+              <a
+                className={
+                  "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
+                }
+              >
+                FIGMA
+              </a>
+              <a
+                className={
+                  "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
+                }
+              >
+                POSTMAN
+              </a>
+            </div>
+          </div>
+          <div className="sm:-translate-x-40 -rotate-10 text-[#CAAC7A] font-[Caveat] sm:text-5xl text-2xl">
+            These skills helped me <br />
+            build all these projects!
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full h-[30vh] text-5xl font-bold flex justify-center items-center">
+        Thank You!
       </div>
     </>
   );
