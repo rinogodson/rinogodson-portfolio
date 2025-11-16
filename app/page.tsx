@@ -1,5 +1,6 @@
 import AnimationWrapper from "@/components/Button/AnimationWrapper/AnimationWrapper";
 import Button from "@/components/Button/Button";
+import Social from "@/components/Button/Socials/Social";
 import Hero from "@/components/Hero";
 import ImageSSR from "@/components/TheFloatingPhoto/ImageSSR";
 
@@ -20,6 +21,7 @@ export default function Home() {
               eventually.
             </p>
             <Button />
+            <Social />
           </div>
         </AnimationWrapper>
         <ImageSSR />
