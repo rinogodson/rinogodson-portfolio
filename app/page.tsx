@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <>
       <div className="h-svh relative w-svw flex flex-col overflow-hidden justify-start items-start">
+        <div className="space w-screen h-screen absolute -z-100"></div>
         <AnimationWrapper>
           <div className="p-20 flex flex-col gap-5 max-[1200px]:p-10 max-[600px]:p-5">
             <h1 className=" text-2xl max-[600px]:text-xl max-[1200px]:text-[1em] font-bold text-[#7F91AF]">

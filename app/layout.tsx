@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./space.css";
 
 import { ConvexWrapper } from "@/components/ConvexWrapper";
 

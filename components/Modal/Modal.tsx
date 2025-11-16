@@ -15,7 +15,7 @@ function Modal({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.1 }}
+      transition={{ duration: 0.2 }}
       onClick={() => setFalse(false)}
       className="fixed inset-0 bg-[rgba(9,14,19,0.9)] backdrop-blur-sm z-1000 flex justify-center w-screen h-screen items-center"
     >

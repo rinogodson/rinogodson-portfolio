@@ -12,10 +12,10 @@ function ProjectClientWrapper() {
   return (
     <div className="w-full flex justify-center items-center mt-10">
       <Button text="MORE PROJECTS" stateSetter={setModal} />
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {modal && (
           <Modal setFalse={setModal}>
-            <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[60vw] w-full gap-5 sm:p-10">
+            <div className="grid grid-cols-2 max-[1200px]:grid-cols-1 sm:w-[60vw] w-full gap-5 sm:p-10">
               {projectData.map((item, i) => {
                 return (
                   <ProjectBox
