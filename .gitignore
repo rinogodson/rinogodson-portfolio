@@ -41,5 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 convex/data/
+convex/_generated/
 convex/.secrets
 .convex/

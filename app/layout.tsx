@@ -3,6 +3,8 @@ import { Space_Grotesk } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import { ConvexWrapper } from "@/components/ConvexWrapper";
+
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -92,7 +94,9 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${sfMono.variable} scroll-smooth overflow-x-hidden`}
     >
-      <body className={`${sfMono.className} antialiased`}>{children}</body>
+      <body className={`${sfMono.className} antialiased`}>
+        <ConvexWrapper>{children}</ConvexWrapper>
+      </body>
     </html>
   );
 }

@@ -1,4 +1,6 @@
 "use client";
+import { useQuery, useMutation } from "convex/react";
+import { api } from "../../convex/_generated/api";
 
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, spring } from "motion/react";
@@ -26,6 +28,13 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
   }, []);
+
+  const count = useQuery(api.counter.get);
+  const increment = useMutation(api.counter.increment);
+
+  const handleClick = async () => {
+    await increment({ by: 1 });
+  };
 
   return (
     <motion.div
@@ -87,7 +96,7 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
                 "_blank",
               );
             }}
-            className="max-[1000px]:hidden flex  cursor-pointer justify-center items-center gap-4 absolute origin-left -bottom-2 -left-[50px] rotate-10 bg-linear-to-r from-[#A282A5] to-[#8291A5] text-black font-bold px-4 py-3 border-3 text-xl border-black"
+            className="max-[1000px]:hidden flex  cursor-pointer justify-center items-center gap-4 absolute origin-left bottom-1 -left-[50px] rotate-10 bg-linear-to-r hover:from-[#A282A5] hover:to-[#8291A5] from-[#BBB9B7] to-[#A9A8A7] text-black font-bold px-4 py-3 border-3 text-xl border-black"
           >
             My thoughts on AI
             {thoughts && <TbCircleArrowUpRightFilled />}
@@ -99,12 +108,13 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
         <a
           onClick={(e) => {
             e.stopPropagation();
+            handleClick();
           }}
           className="h-full w-fit flex px-2 sm:hover:scale-120 active:scale-95 sm:active:scale-100 active:text-red-950 hover:text-red-900 justify-center items-center"
         >
           <PiHeartFill />
         </a>
-        53485820
+        {count}
       </p>
       {isMobile && (
         <motion.div
@@ -114,6 +124,7 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
           transition={{ delay: 1, type: "spring", damping: 8 }}
           onClick={(e) => {
             e.stopPropagation();
+            handleClick();
           }}
           style={{ transition: "all " + spring(0.2, 0.5) }}
           className="absolute -top-4 -left-4 border-2 border-black active:scale-130 active:text-red-500 transition-all duration-100 p-2 bg-[#BCB0A4] text-black rounded-full text-2xl"
