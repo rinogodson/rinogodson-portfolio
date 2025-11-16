@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "convex": "^1.29.1",
     "motion": "^12.23.24",
     "next": "16.0.1",
     "react": "19.2.0",
