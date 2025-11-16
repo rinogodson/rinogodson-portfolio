@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, spring } from "motion/react";
 import { TbCircleArrowUpRightFilled } from "react-icons/tb";
 import { PiHeartFill } from "react-icons/pi";
@@ -8,23 +8,23 @@ import { PiHeartFill } from "react-icons/pi";
 function TheFloatingPhoto({ children }: { children: ReactElement }) {
   const [preview, setPreview] = useState(false);
   const [thoughts, setThoughts] = useState(false);
-  const [isMobile, setMobile] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return window.matchMedia("(max-width: 600px)").matches;
-  });
+  const [isMobile, setMobile] = useState(false);
+
+  const hydrated = useRef(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    hydrated.current = true;
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated.current) return;
 
     const mq = window.matchMedia("(max-width: 600px)");
+    const update = () => setMobile(mq.matches);
 
-    const handleChange = (e: MediaQueryListEvent) => {
-      setMobile(e.matches);
-    };
-
-    mq.addEventListener("change", handleChange);
-
-    return () => mq.removeEventListener("change", handleChange);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
 
   return (
@@ -107,14 +107,18 @@ function TheFloatingPhoto({ children }: { children: ReactElement }) {
         53485820
       </p>
       {isMobile && (
-        <div
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          exit={{ scale: 0 }}
+          transition={{ delay: 1 }}
           onClick={(e) => {
             e.stopPropagation();
           }}
           className="absolute -top-4 -left-4 border-2 border-black active:scale-130 active:text-red-500 transition-all duration-100 p-2 bg-[#BCB0A4] text-black rounded-full text-2xl"
         >
           <PiHeartFill />
-        </div>
+        </motion.div>
       )}
     </motion.div>
   );
