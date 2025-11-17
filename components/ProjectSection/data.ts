@@ -36,7 +36,7 @@ const projectData = [
       "A prototype game where a kitty harnesses gravity powers! Invert gravity with B, jump with space, and avoid obstacles.",
     demo: "https://rinogodson.itch.io/gravkitty",
     repo: "https://github.com/rinogodson/GravKitty",
-    stack: "Golang, Godot",
+    stack: "GDScript, Godot",
   },
   {
     title: "README Wizard",
