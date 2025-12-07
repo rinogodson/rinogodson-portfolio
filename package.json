@@ -11,7 +11,7 @@
   "dependencies": {
     "convex": "^1.29.1",
     "motion": "^12.23.24",
-    "next": "16.0.1",
+    "next": "16.0.7",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-icons": "^5.5.0",
