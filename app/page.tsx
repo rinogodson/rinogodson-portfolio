@@ -8,6 +8,7 @@ import ProjectBox from "@/components/ProjectSection/ProjectBox";
 import ProjectClientWrapper from "@/components/ProjectSection/ProjectClientWrapper";
 import ImageSSR from "@/components/TheFloatingPhoto/ImageSSR";
 import { FaAsterisk } from "react-icons/fa6";
+import { IoDocumentText } from "react-icons/io5";
 
 export default function Home() {
   return (
@@ -26,11 +27,18 @@ export default function Home() {
               stuff. even if it&apos;s half-broken at first, it works...
               eventually.
             </p>
-            <Button
-              icon={<FaAsterisk className="text-sm animate-spinsmooth" />}
-              text="PROJECTS"
-              onclick="projects"
-            />
+            <div className="flex gap-4">
+              <Button
+                icon={<FaAsterisk className="text-sm animate-spinsmooth" />}
+                text="PROJECTS"
+                onclick="projects"
+              />
+              <Button
+                icon={<IoDocumentText className="text-lg" />}
+                text="RESUME"
+                onclick="projects"
+              />
+            </div>
             <Social />
           </div>
         </AnimationWrapper>

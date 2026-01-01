@@ -7,16 +7,27 @@ function Button({
   icon,
   text,
   onclick,
+  resume = true,
   stateSetter,
 }: {
   icon?: ReactElement;
   text: string;
   onclick?: string;
+  resume?: boolean;
   stateSetter?: (state: boolean) => void;
 }) {
   return (
     <button
       onClick={() => {
+        if (resume) {
+          const link = document.createElement("a");
+          link.href = "/resume.pdf";
+          link.download = "resume.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          return;
+        }
         if (onclick)
           document.getElementById(onclick)?.scrollIntoView({
             behavior: "smooth",
