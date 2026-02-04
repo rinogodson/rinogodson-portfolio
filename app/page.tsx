@@ -7,6 +7,7 @@ import LanguageSet from "@/components/Languages/LangaugeSet";
 import projectData from "@/components/ProjectSection/data";
 import ProjectBox from "@/components/ProjectSection/ProjectBox";
 import ProjectClientWrapper from "@/components/ProjectSection/ProjectClientWrapper";
+import ScrollReveal from "@/components/ScrollReveal";
 import ImageSSR from "@/components/TheFloatingPhoto/ImageSSR";
 import { GitHubCalendar } from "react-github-calendar";
 import { FaAsterisk } from "react-icons/fa6";
@@ -51,109 +52,117 @@ export default function Home() {
       </div>
 
       <div className="mt-10 sm:pt-30 pt-20 py-8 w-full border-t-white/5 border-t-2">
-        <div
-          id="projects"
-          className="mb-10 sm:text-5xl px-10 text-3xl font-bold text-[#7EAABA]"
-        >
-          # Projects
-        </div>
-        <div className="sm:px-10 sm:gap-10 grid w-full sm:grid-cols-2 grid-cols-1">
-          {projectData.map((item, i) => {
-            if (i < 6) {
-              const tilt = i % 2 === 0 ? -1 : 1;
-              return (
-                <div
-                  key={item.title}
-                  style={{
-                    transform: `rotate(${tilt}deg)`,
-                    display: "inline-block",
-                  }}
-                >
-                  <ProjectBox
-                    title={item.title}
-                    stack={item.stack}
-                    desc={item.description}
-                    demo={item.demo}
-                    repo={item.repo}
-                    i={i}
-                  />
-                </div>
-              );
-            }
-            return null;
-          })}
-        </div>
-        <ProjectClientWrapper />
-        <div className="flex sm:flex-row flex-col justify-between sm:px-10 items-center gap-20">
-          <div>
-            <div
-              id="skills"
-              className="mb-4 mt-20 sm:text-5xl max-[800px]:px-10 text-3xl font-bold text-[#7EAABA]"
-            >
-              # Skills
-            </div>
-            <div
-              id="skills"
-              className="sm:text-3xl max-[800px]:px-10 text-2xl font-bold text-[#7F91AF]"
-            >
-              ## Languages
-            </div>
-            <LanguageSet />
+        <ScrollReveal>
+          <div
+            id="projects"
+            className="mb-10 sm:text-5xl px-10 text-3xl font-bold text-[#7EAABA]"
+          >
+            # Projects
+          </div>
+          <div className="sm:px-10 sm:gap-10 grid w-full sm:grid-cols-2 grid-cols-1">
+            {projectData.map((item, i) => {
+              if (i < 6) {
+                const tilt = i % 2 === 0 ? -1 : 1;
+                return (
+                  <div
+                    key={item.title}
+                    style={{
+                      transform: `rotate(${tilt}deg)`,
+                      display: "inline-block",
+                    }}
+                  >
+                    <ProjectBox
+                      title={item.title}
+                      stack={item.stack}
+                      desc={item.description}
+                      demo={item.demo}
+                      repo={item.repo}
+                      i={i}
+                    />
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+        </ScrollReveal>
+        <ScrollReveal>
+          <ProjectClientWrapper />
+        </ScrollReveal>
+        <ScrollReveal>
+          <div className="flex sm:flex-row flex-col justify-between sm:px-10 items-center gap-20">
+            <div>
+              <div
+                id="skills"
+                className="mb-4 mt-20 sm:text-5xl max-[800px]:px-10 text-3xl font-bold text-[#7EAABA]"
+              >
+                # Skills
+              </div>
+              <div
+                id="skills"
+                className="sm:text-3xl max-[800px]:px-10 text-2xl font-bold text-[#7F91AF]"
+              >
+                ## Languages
+              </div>
+              <LanguageSet />
 
-            <div
-              id="skills"
-              className="mt-10 sm:text-3xl max-[800px]:px-10 text-2xl font-bold text-[#7F91AF]"
-            >
-              ## Tools
+              <div
+                id="skills"
+                className="mt-10 sm:text-3xl max-[800px]:px-10 text-2xl font-bold text-[#7F91AF]"
+              >
+                ## Tools
+              </div>
+              <div className="flex flex-wrap max-[800px]:px-10 mt-3 gap-2">
+                <a
+                  className={
+                    "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
+                  }
+                >
+                  NEOVIM
+                </a>
+                <a
+                  className={
+                    "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
+                  }
+                >
+                  GIT
+                </a>
+                <a
+                  className={
+                    "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
+                  }
+                >
+                  FIGMA
+                </a>
+                <a
+                  className={
+                    "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
+                  }
+                >
+                  POSTMAN
+                </a>
+              </div>
             </div>
-            <div className="flex flex-wrap max-[800px]:px-10 mt-3 gap-2">
-              <a
-                className={
-                  "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
-                }
-              >
-                NEOVIM
-              </a>
-              <a
-                className={
-                  "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
-                }
-              >
-                GIT
-              </a>
-              <a
-                className={
-                  "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
-                }
-              >
-                FIGMA
-              </a>
-              <a
-                className={
-                  "flex justify-center items-center bg-[#CAAC7A] font-bold text-black px-4 py-1 text-2xl"
-                }
-              >
-                POSTMAN
-              </a>
+            <div className="sm:-translate-x-40 -rotate-10 text-[#CAAC7A] font-[Caveat] sm:text-5xl text-2xl">
+              These skills helped me <br />
+              build all these projects!
             </div>
           </div>
-          <div className="sm:-translate-x-40 -rotate-10 text-[#CAAC7A] font-[Caveat] sm:text-5xl text-2xl">
-            These skills helped me <br />
-            build all these projects!
+        </ScrollReveal>
+      </div>
+      <ScrollReveal>
+        <div className="relative mt-20 flex flex-col items-center justify-center w-svw px-4">
+          <div className="mt-10 text-center sm:text-3xl max-[800px]:px-10 text-2xl font-bold mb-8 text-[#7E9F6E]">
+            {">"} Github Stats <br />
+            <span className="text-xl">(just a flex)</span>
           </div>
+          <GitHubCalendar
+            style={{ width: "100%", overflowX: "auto", marginInline: "20px" }}
+            username="rinogodson"
+            year={new Date().getFullYear() - 1}
+          />
         </div>
-      </div>
-      <div className="relative mt-20 flex flex-col items-center justify-center w-svw px-4">
-        <div className="mt-10 text-center sm:text-3xl max-[800px]:px-10 text-2xl font-bold mb-8 text-[#7E9F6E]">
-          {">"} Github Stats <br />
-          <span className="text-xl">(just a flex)</span>
-        </div>
-        <GitHubCalendar
-          style={{ width: "100%", overflowX: "auto", marginInline: "20px" }}
-          username="rinogodson"
-          year={new Date().getFullYear() - 1}
-        />
-      </div>
+      </ScrollReveal>
       <Footer />
     </>
   );

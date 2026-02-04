@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 export const Footer = () => {
   return (
     <motion.div
@@ -8,7 +8,8 @@ export const Footer = () => {
     >
       <motion.button
         initial={{ scale: 1, translateY: "200px", opacity: 0, rotate: 10 }}
-        animate={{ scale: 1, translateY: "0px", opacity: 1, rotate: -6 }}
+        whileInView={{ scale: 1, translateY: "0px", opacity: 1, rotate: -6 }}
+        viewport={{ once: true }}
         whileHover={{ scale: 1.2, rotate: 4 }}
         whileTap={{ scale: 1 }}
         className="mb-10 mt-20 bg-[#7AB3CA] active:brightness-110 text-black font-bold px-5 py-4 sm:px-14 sm:py-8 text-5xl sm:text-7xl shadow-[0_0_0_10px_black,0_0_0px_15px_#7AB3CA]"
@@ -17,7 +18,8 @@ export const Footer = () => {
       </motion.button>
       <motion.p
         initial={{ translateY: "100px", opacity: 0 }}
-        animate={{ translateY: "0px", opacity: 1 }}
+        whileInView={{ translateY: "0px", opacity: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.5, ease: "linear" }}
         className="absolute bottom-10 w-full text-center grid grid-cols-2 sm:grid-cols-4"
       >
