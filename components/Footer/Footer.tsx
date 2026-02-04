@@ -12,6 +12,7 @@ export const Footer = () => {
         viewport={{ once: true }}
         whileHover={{ scale: 1.2, rotate: 4 }}
         whileTap={{ scale: 1 }}
+        onClick={() => (window.location.href = "mailto:rinogodson@gmail.com")}
         className="mb-10 mt-20 bg-[#7AB3CA] active:brightness-110 text-black font-bold px-5 py-4 sm:px-14 sm:py-8 text-5xl sm:text-7xl shadow-[0_0_0_10px_black,0_0_0px_15px_#7AB3CA]"
       >
         CONNECT
