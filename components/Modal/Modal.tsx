@@ -1,5 +1,5 @@
 "use client";
-import { Dispatch, ReactElement, SetStateAction } from "react";
+import { Dispatch, ReactElement, SetStateAction, useEffect } from "react";
 import { FaX } from "react-icons/fa6";
 import { motion } from "motion/react";
 
@@ -10,13 +10,29 @@ function Modal({
   setFalse: Dispatch<SetStateAction<boolean>>;
   children: ReactElement;
 }) {
+  useEffect(() => {
+    const originalHtmlStyle = window.getComputedStyle(document.documentElement).overflow;
+    const originalBodyStyle = window.getComputedStyle(document.body).overflow;
+    
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    
+    return () => {
+      document.documentElement.style.overflow = originalHtmlStyle;
+      document.body.style.overflow = originalBodyStyle;
+    };
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      onClick={() => setFalse(false)}
+      onClick={(e) => {
+        e.stopPropagation();
+        setFalse(false);
+      }}
       className="fixed inset-0 bg-[rgba(9,14,19,0.9)] backdrop-blur-sm z-1000 flex justify-center w-screen h-screen items-center"
     >
       <motion.div
@@ -24,7 +40,7 @@ function Modal({
         animate={{ opacity: 1, translateY: "0px" }}
         transition={{ duration: 0.3, delay: 0.3 }}
         onClick={(e) => e.stopPropagation()}
-        className="bg-[#090e13] border border-white/10 sm:border-x border-x-0 w-full sm:w-fit sm:h-4/5 overflow-y-scroll max-h-[80vh] h-fit p-1"
+        className="bg-[#090e13] border border-white/10 sm:border-x border-x-0 w-full sm:w-fit sm:h-4/5 overflow-y-scroll overscroll-contain max-h-[80vh] h-fit p-1"
       >
         <motion.div
           initial={{ opacity: 0 }}
