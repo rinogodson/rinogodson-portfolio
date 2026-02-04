@@ -11,7 +11,7 @@ function ProjectClientWrapper() {
 
   return (
     <div className="w-full flex justify-center items-center mt-10">
-      <Button text="MORE PROJECTS" stateSetter={setModal} />
+      <Button resume={false} text="MORE PROJECTS" stateSetter={setModal} />
       <AnimatePresence mode="wait">
         {modal && (
           <Modal setFalse={setModal}>

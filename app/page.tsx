@@ -33,6 +33,7 @@ export default function Home() {
                 icon={<FaAsterisk className="text-sm animate-spinsmooth" />}
                 text="PROJECTS"
                 onclick="projects"
+                resume={false}
               />
               <Button
                 icon={<IoDocumentText className="text-lg" />}
