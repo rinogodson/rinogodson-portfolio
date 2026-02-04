@@ -1,12 +1,14 @@
 import AnimationWrapper from "@/components/Button/AnimationWrapper/AnimationWrapper";
 import Button from "@/components/Button/Button";
 import Social from "@/components/Button/Socials/Social";
+import { Footer } from "@/components/Footer/Footer";
 import Hero from "@/components/Hero";
 import LanguageSet from "@/components/Languages/LangaugeSet";
 import projectData from "@/components/ProjectSection/data";
 import ProjectBox from "@/components/ProjectSection/ProjectBox";
 import ProjectClientWrapper from "@/components/ProjectSection/ProjectClientWrapper";
 import ImageSSR from "@/components/TheFloatingPhoto/ImageSSR";
+import { GitHubCalendar } from "react-github-calendar";
 import { FaAsterisk } from "react-icons/fa6";
 import { IoDocumentText } from "react-icons/io5";
 
@@ -57,19 +59,28 @@ export default function Home() {
         </div>
         <div className="sm:px-10 sm:gap-10 grid w-full sm:grid-cols-2 grid-cols-1">
           {projectData.map((item, i) => {
-            if (i < 4) {
+            if (i < 6) {
+              const tilt = i % 2 === 0 ? -1 : 1;
               return (
-                <ProjectBox
+                <div
                   key={item.title}
-                  title={item.title}
-                  stack={item.stack}
-                  desc={item.description}
-                  demo={item.demo}
-                  repo={item.repo}
-                  i={i}
-                />
+                  style={{
+                    transform: `rotate(${tilt}deg)`,
+                    display: "inline-block",
+                  }}
+                >
+                  <ProjectBox
+                    title={item.title}
+                    stack={item.stack}
+                    desc={item.description}
+                    demo={item.demo}
+                    repo={item.repo}
+                    i={i}
+                  />
+                </div>
               );
             }
+            return null;
           })}
         </div>
         <ProjectClientWrapper />
@@ -132,10 +143,18 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <div className="w-full h-[30vh] text-5xl font-bold flex justify-center items-center">
-        Thank You!
+      <div className="relative mt-20 flex flex-col items-center justify-center w-svw px-4">
+        <div className="mt-10 text-center sm:text-3xl max-[800px]:px-10 text-2xl font-bold mb-8 text-[#7E9F6E]">
+          {">"} Github Stats <br />
+          <span className="text-xl">(just a flex)</span>
+        </div>
+        <GitHubCalendar
+          style={{ width: "100%", overflowX: "auto", marginInline: "20px" }}
+          username="rinogodson"
+          year={new Date().getFullYear() - 1}
+        />
       </div>
+      <Footer />
     </>
   );
 }

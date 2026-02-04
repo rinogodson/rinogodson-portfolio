@@ -24,7 +24,7 @@ function Modal({
         animate={{ opacity: 1, translateY: "0px" }}
         transition={{ duration: 0.3, delay: 0.3 }}
         onClick={(e) => e.stopPropagation()}
-        className="bg-[#090e13] border border-white/10 sm:border-x border-x-0 w-full sm:w-fit sm:h-4/5 overflow-y-scroll max-h-[80vh] h-fit p-6"
+        className="bg-[#090e13] border border-white/10 sm:border-x border-x-0 w-full sm:w-fit sm:h-4/5 overflow-y-scroll max-h-[80vh] h-fit p-1"
       >
         <motion.div
           initial={{ opacity: 0 }}
